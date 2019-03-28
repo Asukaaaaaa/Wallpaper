@@ -1,0 +1,9 @@
+{
+    "name": "electron_player",
+    "version": "0.0.1",
+    "main": "main.js",
+    "dependencies": {
+        "electron": "^4.1.1",
+        "jsdom": "^14.0.0"
+    }
+}
