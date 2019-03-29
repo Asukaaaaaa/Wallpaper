@@ -1,3 +1,4 @@
+#include <iostream>
 #include <windows.h>
 
 #include "taskBar.hpp"
@@ -18,9 +19,17 @@ char ElectronWdName[] = "Electron Player";
 char TaskbarClassName[] = "Shell_TrayWnd";
 
 int main(int argc, char const *argv[]) {
-    init();
-    setWdBlur(FindWindow(TaskbarClassName, NULL));
-    HWND handle = FindWindow(NULL, ElectronWdName);
-    SetParent(handle, WP_HANDLE);
+    if (argc > 1) {
+        if (!strcmp(argv[1], "-blur")) {
+            setWdBlur(FindWindow(TaskbarClassName, NULL));
+        }
+        return 0; 
+    }
+    else {
+        init();
+        setWdBlur(FindWindow(TaskbarClassName, NULL));
+        HWND handle = FindWindow(NULL, ElectronWdName);
+        SetParent(handle, WP_HANDLE);
+    }
     return 0;
 }
