@@ -1,0 +1,7 @@
+EXPORTS
+    _Z10StartHooksP6HWND__@4 @1
+    _Z13KeyProcThreadPv@4 @2
+    _Z15LowLevelKeyProcijl@12 @3
+    _Z15MouseProcThreadPv@4 @4
+    _Z17LowLevelMouseProcijl@12 @5
+    _Z9StopHooksv@0 @6
