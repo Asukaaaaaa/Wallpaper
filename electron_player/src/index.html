@@ -7,11 +7,24 @@
     <style>
         body {
             margin: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         video {
             width: 100%;
-            height: 100%
+            height: 100%;
+        }
+
+        canvas.live2d {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
         }
     </style>
 </head>
@@ -21,8 +34,26 @@
         <source src="./out.mp4">
         <!--<source src="localhost:8888?time=0" type="video/mp4">-->
     </video>
+    
+    <canvas id="live2d" class="live2d"></canvas>
+
+    <!-- Live2D Library -->
+    <script src="./lib/live2d.min.js"></script>
+    <!-- Live2D Framework -->
+    <script src="./framework/Live2DFramework.js"></script>
+    <!-- User's Script -->
+    <script src="./utils/MatrixStack.js"></script>
+    <script src="./utils/ModelSettingJson.js"></script>
+    <script src="./PlatformManager.js"></script>
+    <script src="./LAppDefine.js"></script>
+    <script src="./LAppModel.js"></script>
+    <script src="./LAppLive2DManager.js"></script>
+    <script src="./SampleApp1.js"></script>
+
+    <script src="./app.bundle.js"></script>
     <script>
-        document.getElementById('videoPlayer').volume = 0.1
+        document.getElementById('videoPlayer').volume = 0.05
+        window.onclick = () => alert(1)
     </script>
 </body>
 
